@@ -1,6 +1,8 @@
-package com.example.product.vo;
+package com.example.product.utils;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * ResultVO:
@@ -9,7 +11,9 @@ import lombok.Data;
  * @Date 2020/3/7 17:14
  */
 @Data
-public class ResultVO<T> {
+@AllArgsConstructor
+@NoArgsConstructor
+public class APIResult<T> {
 
     /**
      * 错误码

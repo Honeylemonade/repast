@@ -3,6 +3,7 @@ package com.example.order.entity;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -20,7 +21,8 @@ public class OrderMaster {
      * 订单id.
      */
     @Id
-    private String orderId;
+    @GeneratedValue
+    private Integer orderId;
 
     /**
      * 买家名字.
@@ -33,14 +35,9 @@ public class OrderMaster {
     private String buyerPhone;
 
     /**
-     * 买家地址.
-     */
-    private String buyerAddress;
-
-    /**
      * 买家微信Openid.
      */
-    private String buyerOpenid;
+    private String buyerId;
 
     /**
      * 订单总金额.
@@ -56,14 +53,4 @@ public class OrderMaster {
      * 支付状态, 默认为0未支付.
      */
     private Integer payStatus;
-
-    /**
-     * 创建时间.
-     */
-    private Date createTime;
-
-    /**
-     * 更新时间.
-     */
-    private Date updateTime;
 }

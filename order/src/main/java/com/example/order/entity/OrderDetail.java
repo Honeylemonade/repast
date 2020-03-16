@@ -3,6 +3,7 @@ package com.example.order.entity;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
@@ -16,17 +17,18 @@ import java.math.BigDecimal;
 @Entity
 public class OrderDetail {
     @Id
-    private String detailId;
+    @GeneratedValue
+    private Integer detailId;
 
     /**
      * 订单id.
      */
-    private String orderId;
+    private Integer orderId;
 
     /**
      * 商品id.
      */
-    private String productId;
+    private Integer productId;
 
     /**
      * 商品名称.

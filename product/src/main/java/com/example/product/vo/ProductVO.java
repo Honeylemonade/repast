@@ -1,5 +1,6 @@
 package com.example.product.vo;
 
+import com.example.product.entity.ProductInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -13,12 +14,14 @@ import java.util.List;
  */
 @Data
 public class ProductVO {
+
+    @JsonProperty("typeId")
+    private Integer categoryId;
+
     @JsonProperty("name")
     private String categoryName;
 
-    @JsonProperty("type")
-    private Integer categoryType;
 
     @JsonProperty("foods")
-    List<ProductInfoVO> productInfoVOList;
+    List<ProductInfo> productInfoList;
 }

@@ -22,7 +22,7 @@ import java.util.Date;
 @Entity
 public class ProductInfo {
     @Id
-    private String productId;
+    private Integer productId;
 
     /**
      * 名字.
@@ -47,7 +47,7 @@ public class ProductInfo {
     /**
      * 小图.
      */
-    private String productIcon;
+    private String productPic;
 
     /**
      * 状态, 0正常1下架.
@@ -57,10 +57,6 @@ public class ProductInfo {
     /**
      * 类目编号.
      */
-    private Integer categoryType;
-
-    private Date createTime;
-
-    private Date updateTime;
+    private Integer categoryId;
 
 }

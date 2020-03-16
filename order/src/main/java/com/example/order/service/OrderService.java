@@ -10,7 +10,7 @@ import com.example.order.dto.OrderDTO;
  */
 public interface OrderService {
     /**
-     * 创建订单
+     * 创建订单 orderDTO为master和detail的合集
      * @param orderDTO
      * @return
      */

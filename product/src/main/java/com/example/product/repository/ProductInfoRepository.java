@@ -14,5 +14,11 @@ import java.util.List;
  */
 @Repository
 public interface ProductInfoRepository extends CrudRepository<ProductInfo, String> {
+    /**
+     * 根据产品的上架状态查询产品
+     *
+     * @param productStatus
+     * @return
+     */
     List<ProductInfo> findByProductStatus(Integer productStatus);
 }

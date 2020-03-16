@@ -20,8 +20,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductInfoRepository productInfoRepository;
+
+
     @Override
-    public List<ProductInfo> findUpAll() {
+    public List<ProductInfo> findAllOnSell() {
         return productInfoRepository.findByProductStatus(ProductStatusEnum.UP.getCode());
     }
 }
