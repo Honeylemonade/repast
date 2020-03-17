@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * OrderDTO:
+ * OrderDTO:包含了主订单和订单详情
  *
  * @Author XvYanpeng
  * @Date 2020/3/7 18:08
@@ -16,7 +16,7 @@ import java.util.List;
 public class OrderDTO {
 
     /** 订单id. */
-    private String orderId;
+    private Integer orderId;
 
     /** 买家名字. */
     private String buyerName;
@@ -24,11 +24,8 @@ public class OrderDTO {
     /** 买家手机号. */
     private String buyerPhone;
 
-    /** 买家地址. */
-    private String buyerAddress;
-
     /** 买家微信Openid. */
-    private String buyerOpenid;
+    private String buyerId;
 
     /** 订单总金额. */
     private BigDecimal orderAmount;

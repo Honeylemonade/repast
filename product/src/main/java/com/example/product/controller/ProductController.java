@@ -64,4 +64,9 @@ public class ProductController {
         return new APIResult<List<ProductVO>>(ResultCodeEnum.SUCCESS.getCode(), ResultCodeEnum.SUCCESS.getMessage(), productVOArrayList);
     }
 
+    @GetMapping("/msg")
+    public String test() {
+        return "msg";
+    }
+
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * OrderForm:
+ * OrderForm:用于创建订单的API，前端发送过来的信息必须符合此格式
  *
  * @Author XvYanpeng
  * @Date 2020/3/7 18:22
@@ -25,17 +25,12 @@ public class OrderForm {
     @NotEmpty(message = "手机号必填")
     private String phone;
 
-    /**
-     * 买家地址
-     */
-    @NotEmpty(message = "地址必填")
-    private String address;
 
     /**
      * 买家微信openid
      */
-    @NotEmpty(message = "openid必填")
-    private String openid;
+    @NotEmpty(message = "buyerId必填")
+    private String buyerId;
 
     /**
      * 购物车

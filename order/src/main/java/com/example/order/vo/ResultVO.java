@@ -1,5 +1,6 @@
 package com.example.order.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -9,6 +10,7 @@ import lombok.Data;
  * @Date 2020/3/7 18:26
  */
 @Data
+@AllArgsConstructor
 public class ResultVO<T> {
     private Integer code;
 
