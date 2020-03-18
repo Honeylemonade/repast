@@ -1,6 +1,8 @@
 package com.example.order.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,12 +18,13 @@ import java.util.Date;
  */
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderMaster {
     /**
      * 订单id.
      */
     @Id
-    @GeneratedValue
     private Integer orderId;
 
     /**

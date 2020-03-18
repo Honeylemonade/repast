@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
  * @Date 2020/3/7 17:47
  */
 @Repository
-public interface OrderMasterRepository extends JpaRepository<OrderMaster, String> {
+public interface OrderMasterRepository extends JpaRepository<OrderMaster, Integer> {
 }

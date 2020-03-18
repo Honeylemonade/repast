@@ -13,7 +13,7 @@ import java.util.List;
  * @Date 2020/3/7 12:43
  */
 @Repository
-public interface ProductInfoRepository extends CrudRepository<ProductInfo, String> {
+public interface ProductInfoRepository extends CrudRepository<ProductInfo, Integer> {
     /**
      * 根据产品的上架状态查询产品
      *
@@ -21,4 +21,12 @@ public interface ProductInfoRepository extends CrudRepository<ProductInfo, Strin
      * @return
      */
     List<ProductInfo> findByProductStatus(Integer productStatus);
+
+    /**
+     * 根据id列表查询对应id的商品信息
+     *
+     * @param productIdList
+     * @return
+     */
+    List<ProductInfo> findByProductIdIn(List<Integer> productIdList);
 }

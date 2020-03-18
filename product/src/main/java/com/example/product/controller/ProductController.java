@@ -1,5 +1,6 @@
 package com.example.product.controller;
 
+import com.example.product.dto.CartDTO;
 import com.example.product.entity.ProductCategory;
 import com.example.product.entity.ProductInfo;
 import com.example.product.enums.ResultCodeEnum;
@@ -9,9 +10,7 @@ import com.example.product.vo.ProductVO;
 import com.example.product.utils.APIResult;
 import org.bouncycastle.jcajce.provider.digest.MD2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -60,13 +59,23 @@ public class ProductController {
             }
 
         }
-
         return new APIResult<List<ProductVO>>(ResultCodeEnum.SUCCESS.getCode(), ResultCodeEnum.SUCCESS.getMessage(), productVOArrayList);
     }
 
-    @GetMapping("/msg")
-    public String test() {
-        return "msg";
+    /**
+     * 根据商品ID列表，获取对应商品信息（提供给Order服务调用）
+     *
+     * @param productIdList
+     * @return
+     */
+    @PostMapping("/listForOrder")
+    public List<ProductInfo> listForOrder(@RequestBody List<Integer> productIdList) {
+        return productService.findByProductIdIn(productIdList);
+
     }
 
+    @PostMapping("/decreaseStock")
+    public void decreaseStock(@RequestBody List<CartDTO> cartDTOList) {
+        productService.decreaseStock(cartDTOList);
+    }
 }
